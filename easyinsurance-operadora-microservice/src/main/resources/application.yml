@@ -10,7 +10,7 @@ server:
     
 spring:
   datasource:
-    url: jdbc:h2:mem:userdb;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:operadora;DB_CLOSE_ON_EXIT=FALSE
     username: sa
     password: teste
   h2:

@@ -1,4 +1,4 @@
-package br.com.fiap.microservices;
+package br.com.fiap.microservices.easyisurance.operadora;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -85,7 +85,19 @@ public class OperadoraApplicationTests {
     }
 
     
+    @Test
+    public void testeConsultarOperadoraServico() throws URISyntaxException {
+    	final String baseUrl = "http://localhost:"+randomServerPort+"/easyinsurance/operadora";
+    	ResponseEntity<String> result = this.restTemplate.getForEntity(baseUrl, String.class);
+    	assertEquals(result.getStatusCodeValue(), HttpStatus.SC_OK);
+    }
     
+    @Test
+    public void testeConsultarUnicoPlano() throws URISyntaxException {
+    	final String baseUrl = "http://localhost:"+randomServerPort+"/easyinsurance/operadora";
+    	ResponseEntity<String> result = this.restTemplate.getForEntity(baseUrl + "/1", String.class);
+    	assertEquals(result.getStatusCodeValue(), HttpStatus.SC_OK);
+    }
     
     
     
